@@ -1196,6 +1196,7 @@ boolean at_stairs, falling, portal;
 
     /* Prevent the player from going past the first quest level unless
      * (s)he has been given the go-ahead by the leader.
+	 * edit: or if the quest leader is dead...
      */
     if (on_level(&u.uz, &qstart_level) && !newdungeon && !ok_to_quest()) {
         pline("A mysterious force prevents you from descending.");
