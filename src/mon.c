@@ -410,6 +410,9 @@ unsigned corpseflags;
         break;
     /* expired puddings will congeal into a large blob;
        like dragons, relies on the order remaining consistent */
+	case PM_QUIVERING_BLOB:
+	case PM_ACID_BLOB:
+	case PM_GELATINOUS_CUBE:
     case PM_GRAY_OOZE:
     case PM_BROWN_PUDDING:
     case PM_GREEN_SLIME:

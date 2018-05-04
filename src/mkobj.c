@@ -838,8 +838,8 @@ boolean artif;
             if (Is_pudding(otmp)) {
                 otmp->globby = 1;
                 otmp->known = otmp->dknown = 1;
-                otmp->corpsenm = PM_GRAY_OOZE
-                                 + (otmp->otyp - GLOB_OF_GRAY_OOZE);
+                otmp->corpsenm = PM_ACID_BLOB
+                                 + (otmp->otyp - ACID_GLOB);
             } else {
                 if (otmp->otyp != CORPSE && otmp->otyp != MEAT_RING
                     && otmp->otyp != KELP_FROND && !rn2(6)) {

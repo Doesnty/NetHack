@@ -1160,7 +1160,7 @@ struct permonst *mdat;
 {
     if (is_golem(mdat)
         || mdat->mlet == S_EYE /* spheres  */
-        || mdat->mlet == S_JELLY || mdat->mlet == S_PUDDING
+        || mdat->mlet == S_JELLY
         || mdat->mlet == S_BLOB || mdat->mlet == S_VORTEX
         || mdat->mlet == S_ELEMENTAL
         || mdat->mlet == S_FUNGUS /* mushrooms and fungi */

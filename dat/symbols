@@ -495,7 +495,7 @@ start: Blank
         S_polymorph_trap: \032
         S_pool: \032
         S_potion: \032
-        S_pudding: \032
+        S_plant: \032
         S_quadruped: \032
         S_quantmech: \032
         S_ring: \032

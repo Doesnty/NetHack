@@ -748,10 +748,13 @@ OBJECT(OBJ("meat ring", None),
        0, FOOD_CLASS, 0, 1, 5, 1, 0, 0, 0, 0, 5, CLR_BROWN),
 /* pudding 'corpses' will turn into these and combine;
    must be in same order as the pudding monsters */
-FOOD("glob of gray ooze",     0,  2, 20, 0, FLESH,  20, CLR_GRAY),
-FOOD("glob of brown pudding", 0,  2, 20, 0, FLESH,  20, CLR_BROWN),
-FOOD("glob of green slime",   0,  2, 20, 0, FLESH,  20, CLR_GREEN),
-FOOD("glob of black pudding", 0,  2, 20, 0, FLESH,  20, CLR_BLACK),
+FOOD("acid glob",               0,  2, 20, 0, FLESH,  20, CLR_WHITE),
+FOOD("quivering glob",          0,  2, 20, 0, FLESH,  20, CLR_GREEN),
+FOOD("glob of gelatinous cube", 0,  2, 20, 0, FLESH,  20, CLR_CYAN),
+FOOD("glob of gray ooze",       0,  2, 20, 0, FLESH,  20, CLR_GRAY),
+FOOD("glob of brown pudding",   0,  2, 20, 0, FLESH,  20, CLR_BROWN),
+FOOD("glob of green slime",     0,  2, 20, 0, FLESH,  20, CLR_GREEN),
+FOOD("glob of black pudding"  , 0,  2, 20, 0, FLESH,  20, CLR_BLACK),
 
 /* fruits & veggies */
 FOOD("kelp frond",            0,  1,  1, 0, VEGGY,  30, CLR_GREEN),

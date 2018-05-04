@@ -250,8 +250,7 @@ struct obj {
 #define mlevelgain(obj) (ofood(obj) && (obj)->corpsenm == PM_WRAITH)
 #define mhealup(obj) (ofood(obj) && (obj)->corpsenm == PM_NURSE)
 #define Is_pudding(o)                                                 \
-    (o->otyp == GLOB_OF_GRAY_OOZE || o->otyp == GLOB_OF_BROWN_PUDDING \
-     || o->otyp == GLOB_OF_GREEN_SLIME || o->otyp == GLOB_OF_BLACK_PUDDING)
+    (o->otyp >= ACID_GLOB || o->otyp <= GLOB_OF_BLACK_PUDDING)
 
 /* Containers */
 #define carried(o) ((o)->where == OBJ_INVENT)

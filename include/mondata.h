@@ -188,7 +188,9 @@
 /* G_NOCORPSE monsters might still be swallowed as a purple worm */
 /* Maybe someday this could be in mflags... */
 #define vegan(ptr)                                                 \
-    ((ptr)->mlet == S_BLOB || (ptr)->mlet == S_JELLY               \
+    ((ptr)->mlet == S_JELLY                                        \
+     || ((ptr)->mlet == S_BLOB && (ptr != &mons[PM_BLACK_PUDDING]) \
+                               && (ptr != &mons[PM_BROWN_PUDDING]))\
      || (ptr)->mlet == S_FUNGUS || (ptr)->mlet == S_VORTEX         \
      || (ptr)->mlet == S_LIGHT                                     \
      || ((ptr)->mlet == S_ELEMENTAL && (ptr) != &mons[PM_STALKER]) \
@@ -196,7 +198,7 @@
          && (ptr) != &mons[PM_LEATHER_GOLEM]) || noncorporeal(ptr))
 #define vegetarian(ptr) \
     (vegan(ptr)         \
-     || ((ptr)->mlet == S_PUDDING && (ptr) != &mons[PM_BLACK_PUDDING]))
+     || ((ptr)->mlet == S_BLOB && (ptr) != &mons[PM_BLACK_PUDDING]))
 
 /* monkeys are tameable via bananas but not pacifiable via food,
    otherwise their theft attack could be nullified too easily;

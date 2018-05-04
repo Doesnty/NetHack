@@ -182,7 +182,6 @@ boolean seal;
 {
     branch *br;
     d_level *dest;
-    struct trap *t;
     int portal_flag;
 
     br = dungeon_branch("The Quest");
