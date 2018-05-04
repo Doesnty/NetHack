@@ -2056,18 +2056,36 @@ register struct monst *shkp; /* if angry, impose a surcharge */
              || (uarmu && !uarm && !uarmc)) /* touristy shirt visible */
         multiplier *= 4L, divisor *= 3L;
 
+	/* Charisma's effect on pricing:
+	 * CHA   NEW         OLD
+	 * >18   0.5    8/16  x0.5  <- hard limit
+	 *  18          9/16  x0.67
+	 *  17   0.62  10/16  x0.75
+	 *  16         11/16  x0.75
+	 *  15   0.75  12/16  x1
+	 *  14         13/16  x1
+	 *  13   0.87  14/16  x1
+	 *  12         15/16  x1
+	 *  11   1.0   16/16  x1
+	 *  10         18/16  x1.33
+	 *   9   1.25  20/16  x1.33
+	 *   8         22/16  x1.33
+	 *   7   1.5   24/16  x1.5
+	 *   6         28/16  x1.5
+	 *   5   2.0   32/16  x2.0
+	 *   4   2.5   40/16  x2.0
+	 *   3   3.0   48/16  x2.0
+	 */
     if (ACURR(A_CHA) > 18)
         divisor *= 2L;
-    else if (ACURR(A_CHA) == 18)
-        multiplier *= 2L, divisor *= 3L;
-    else if (ACURR(A_CHA) >= 16)
-        multiplier *= 3L, divisor *= 4L;
-    else if (ACURR(A_CHA) <= 5)
-        multiplier *= 2L;
-    else if (ACURR(A_CHA) <= 7)
-        multiplier *= 3L, divisor *= 2L;
-    else if (ACURR(A_CHA) <= 10)
-        multiplier *= 4L, divisor *= 3L;
+    else if (ACURR(A_CHA)> 10)
+        multiplier *= (27L - (long)ACURR(A_CHA)), divisor *= 16L;
+    else if (ACURR(A_CHA) > 6)
+        multiplier *= (19L - (long)ACURR(A_CHA)), divisor *= 8L;
+    else if (ACURR(A_CHA) > 4)
+		multiplier *= (13L - (long)ACURR(A_CHA)), divisor *= 4L;
+    else
+		multiplier *= (9L - (long)ACURR(A_CHA)), divisor *= 2L;
 
     /* tmp = (tmp * multiplier) / divisor [with roundoff tweak] */
     tmp *= multiplier;

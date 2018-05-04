@@ -1081,6 +1081,18 @@ int dieroll;
         /* [this assumes that `!thrown' implies wielded...] */
         wtype = thrown ? weapon_type(wep) : uwep_skill_type();
         use_skill(wtype, 1);
+		/* Extensive use of a weapon can identify it.
+		 * This requires 20 uses with basic skill.
+		 * Doesn't work well with throwing stacks right now...
+		 */
+		if (wep && wep->usecount < 40 && not_fully_identified(wep)) {
+			wep->usecount += max(1, P_SKILL(wtype));
+			if (wep->usecount >= 40)
+			{
+				fully_identify_obj(wep);
+				You("understand %s better.", doname(wep));
+			}
+		}
     }
 
     if (ispoisoned) {

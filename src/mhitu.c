@@ -2053,6 +2053,19 @@ boolean ufound;
             }
             break;
 
+		case AD_PLYS:
+			if (Free_action || Blind) {
+				You("momentarily stiffen.");
+			}
+			else {
+				You("are frozen by %s!", mon_nam(mtmp));
+				nomovemsg = You_can_move_again;
+				nomul(-tmp);
+				multi_reason = "paralyzed by a monster";
+				exercise(A_DEX, FALSE);
+			}
+			break;
+
         default:
             break;
         }
