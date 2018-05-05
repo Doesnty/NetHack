@@ -2335,6 +2335,13 @@ const char *oldstr;
         Strcasecpy(spot, "ies"); /* y -> ies */
         goto bottom;
     }
+	/* The word "stoma" is pluralized as "stomata" because english. */
+	if (len >= 5 && !strcmpi(spot - 4, "stoma"))
+	{
+		Strcasecpy(spot + 1, "ta");
+		goto bottom;
+	}
+
     /* Default: append an 's' */
     Strcasecpy(spot + 1, "s");
 

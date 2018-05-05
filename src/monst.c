@@ -143,6 +143,7 @@ NEARDATA struct permonst mons[] = {
         M2_HOSTILE | M2_FEMALE | M2_PRINCE, 0, HI_LORD),
     /*
      * blobs
+	 * must be in the same order as the pudding globs in objects.c
      */
     MON("acid blob", S_BLOB, LVL(1, 3, 8, 0, 0), (G_GENO | 2),
         A(ATTK(AT_NONE, AD_ACID, 1, 8), NO_ATTK, NO_ATTK, NO_ATTK, NO_ATTK,
@@ -1727,10 +1728,14 @@ struct permonst _mons2[] = {
         M2_STRONG | M2_PRINCE | M2_MALE | M2_GREEDY | M2_JEWELS | M2_COLLECT,
         M3_INFRAVISIBLE | M3_INFRAVISION, HI_LORD),
     /*
-     * Puddings
-     * Recently renovated. How suspicious.
-     * must be in the same order as the pudding globs in objects.c
+     * Plants
      */
+	MON("mantrap", S_PLANT, LVL(5, 12, 10, 10, 0), (G_GENO | 3),
+		A(ATTK(AT_BITE, AD_PHYS, 1, 12), ATTK(AT_BITE, AD_PHYS, 1, 12),
+			ATTK(AT_HUGS, AD_PHYS, 2, 8), NO_ATTK, NO_ATTK, NO_ATTK),
+		SIZ(650, 70, MS_SILENT, MZ_MEDIUM), MR_SLEEP, 0,
+		M1_NOTAKE | M1_NOEYES | M1_NOHANDS | M1_NOLIMBS | M1_MINDLESS |
+		M1_CARNIVORE, M2_NEUTER | M2_HOSTILE, M3_ROOTED, CLR_YELLOW),
     /*
      * Quantum mechanics
      */

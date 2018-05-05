@@ -1315,7 +1315,7 @@ wriggle_free:
 boolean
 u_rooted()
 {
-    if (!youmonst.data->mmove) {
+    if (!youmonst.data->mmove || is_rooted(youmonst.data)) {
         You("are rooted %s.",
             Levitation || Is_airlevel(&u.uz) || Is_waterlevel(&u.uz)
                 ? "in place"

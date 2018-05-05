@@ -192,7 +192,7 @@
      || ((ptr)->mlet == S_BLOB && (ptr != &mons[PM_BLACK_PUDDING]) \
                                && (ptr != &mons[PM_BROWN_PUDDING]))\
      || (ptr)->mlet == S_FUNGUS || (ptr)->mlet == S_VORTEX         \
-     || (ptr)->mlet == S_LIGHT                                     \
+     || (ptr)->mlet == S_LIGHT || (ptr)->mlet == S_PLANT           \
      || ((ptr)->mlet == S_ELEMENTAL && (ptr) != &mons[PM_STALKER]) \
      || ((ptr)->mlet == S_GOLEM && (ptr) != &mons[PM_FLESH_GOLEM]  \
          && (ptr) != &mons[PM_LEATHER_GOLEM]) || noncorporeal(ptr))
@@ -213,5 +213,8 @@
         && ((ptr)->mlet != S_UNICORN                                     \
             || objects[(obj)->otyp].oc_material == VEGGY                 \
             || ((obj)->otyp == CORPSE && (obj)->corpsenm == PM_LICHEN))))
+
+#define is_rooted(ptr) ((ptr->mflags3 & M3_ROOTED))
+
 
 #endif /* MONDATA_H */

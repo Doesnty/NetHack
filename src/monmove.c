@@ -791,6 +791,8 @@ register int after;
     }
     if (hides_under(ptr) && OBJ_AT(mtmp->mx, mtmp->my) && rn2(10))
         return 0; /* do not leave hiding place */
+	if (is_rooted(ptr))
+		return 0;
 
     set_apparxy(mtmp);
     /* where does mtmp think you are? */
